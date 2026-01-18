@@ -16,40 +16,24 @@
   }
 
   function init() {
-    // Year + Today
     safeSetText("year", new Date().getFullYear());
     safeSetText("today", new Date().toLocaleDateString("ar"));
 
-    // Repo link (اختياري: ضع رابطك هنا)
-    const repoLink = $("repoLink");
-    if (repoLink) {
-      // ضع رابط المستودع الحقيقي إن أردت:
-      // repoLink.href = "https://github.com/USERNAME/REPO";
-      repoLink.href = "#";
-    }
-
-    // Toast button
     const toastBtn = $("toastBtn");
-    if (toastBtn) {
-      toastBtn.addEventListener("click", () => showToast("✅ كل شيء يعمل بشكل ممتاز"));
-    }
+    if (toastBtn) toastBtn.addEventListener("click", () => showToast("✅ الموقع يعمل بنجاح"));
 
-    // Contact form (تجريبي)
     const form = $("contactForm");
     if (form) {
       form.addEventListener("submit", (e) => {
         e.preventDefault();
-        showToast("✅ تم (تجريبي) — لا يتم إرسال بيانات");
+        showToast("✅ تم الإرسال (تجريبي)");
       });
     }
 
-    // Mobile menu
     const menuBtn = $("menuBtn");
     const links = $("links");
     if (menuBtn && links) {
-      menuBtn.addEventListener("click", () => {
-        links.classList.toggle("open");
-      });
+      menuBtn.addEventListener("click", () => links.classList.toggle("open"));
     }
   }
 

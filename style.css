@@ -229,8 +229,6 @@ h1{
   border-top:1px dashed rgba(255,255,255,.12);
 }
 .meta li:first-child{border-top:none; padding-top:0}
-.meta span{color:rgba(232,238,252,.85)}
-.meta a{opacity:.95; text-decoration:underline}
 
 .chips{display:flex; flex-wrap:wrap; gap:8px}
 .chip{
@@ -275,7 +273,6 @@ h1{
 }
 
 .contact{margin-top:22px}
-
 .form{display:grid; gap:10px}
 label{display:grid; gap:6px; color:rgba(232,238,252,.9); font-weight:700}
 
@@ -313,10 +310,7 @@ input:focus, textarea:focus{border-color: rgba(25,211,255,.55)}
   transition: .25s ease;
   backdrop-filter: blur(10px);
 }
-.toast.show{
-  opacity:1;
-  transform: translateY(0);
-}
+.toast.show{opacity:1; transform: translateY(0)}
 
 @media (max-width: 920px){
   .hero{grid-template-columns:1fr}
