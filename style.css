@@ -59,11 +59,7 @@ code{
   background: rgba(11,18,32,.55);
 }
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
+.brand{display:flex; align-items:center; gap:10px}
 
 .logo{
   width:36px;
@@ -76,17 +72,9 @@ code{
   font-weight:800;
 }
 
-.brand-text{
-  font-weight:700;
-  letter-spacing:.2px;
-}
+.brand-text{font-weight:700; letter-spacing:.2px}
 
-.links{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-
+.links{display:flex; align-items:center; gap:14px}
 .links a{opacity:.9}
 .links a:hover{opacity:1; text-decoration:underline}
 
@@ -167,7 +155,6 @@ h1{
   cursor:pointer;
   box-shadow: 0 14px 30px rgba(124,92,255,.22);
 }
-
 .btn:hover{filter:brightness(1.03)}
 
 .btn-ghost{
@@ -199,22 +186,17 @@ h1{
   align-items:flex-start;
   transition: transform .2s ease, box-shadow .2s ease;
 }
-
 .stat:hover{
   transform: translateY(-4px);
   box-shadow: 0 14px 35px rgba(0,0,0,.25);
 }
-
 .stat .k{font-size:1.2rem}
 .stat .n{margin:0; font-weight:800}
 .stat .d{margin:2px 0 0; color:var(--muted); font-size:.88rem}
 
-.side{
-  display:grid;
-  gap:12px;
-}
+.side{display:grid; gap:12px}
 
-/* ✅ Card Glass Style */
+/* Card Glass */
 .card{
   border:1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.06);
@@ -223,22 +205,13 @@ h1{
   padding:18px;
   transition: transform .2s ease, box-shadow .2s ease;
 }
-
 .card:hover{
   transform: translateY(-4px);
   box-shadow: 0 14px 35px rgba(0,0,0,.25);
 }
 
-.card h2{
-  margin:0 0 10px;
-  font-size:1.15rem;
-}
-
-.card p{
-  margin:0 0 10px;
-  color:var(--muted);
-  line-height:1.7;
-}
+.card h2{margin:0 0 10px; font-size:1.15rem}
+.card p{margin:0 0 10px; color:var(--muted); line-height:1.7}
 
 .meta{
   list-style:none;
@@ -247,7 +220,6 @@ h1{
   display:grid;
   gap:10px;
 }
-
 .meta li{
   display:grid;
   grid-template-columns: 92px 1fr;
@@ -256,21 +228,11 @@ h1{
   padding-top:10px;
   border-top:1px dashed rgba(255,255,255,.12);
 }
-
-.meta li:first-child{
-  border-top:none;
-  padding-top:0;
-}
-
+.meta li:first-child{border-top:none; padding-top:0}
 .meta span{color:rgba(232,238,252,.85)}
 .meta a{opacity:.95; text-decoration:underline}
 
-.chips{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-}
-
+.chips{display:flex; flex-wrap:wrap; gap:8px}
 .chip{
   border:1px solid rgba(255,255,255,.14);
   background: rgba(255,255,255,.06);
@@ -281,12 +243,7 @@ h1{
 }
 
 .grid{margin-top:22px}
-
-.section-title{
-  margin:0 0 12px;
-  font-size:1.2rem;
-  opacity:.95;
-}
+.section-title{margin:0 0 12px; font-size:1.2rem; opacity:.95}
 
 .cards{
   display:grid;
@@ -301,26 +258,14 @@ h1{
   padding:16px;
   transition: transform .2s ease, box-shadow .2s ease;
 }
-
 .pcard:hover{
   transform: translateY(-4px);
   box-shadow: 0 14px 35px rgba(0,0,0,.25);
 }
-
 .pcard h3{margin:0 0 8px}
+.pcard p{margin:0 0 12px; color:var(--muted); line-height:1.6}
 
-.pcard p{
-  margin:0 0 12px;
-  color:var(--muted);
-  line-height:1.6;
-}
-
-.row{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-}
-
+.row{display:flex; gap:8px; flex-wrap:wrap}
 .tag{
   font-size:.85rem;
   padding:6px 10px;
@@ -331,17 +276,8 @@ h1{
 
 .contact{margin-top:22px}
 
-.form{
-  display:grid;
-  gap:10px;
-}
-
-label{
-  display:grid;
-  gap:6px;
-  color:rgba(232,238,252,.9);
-  font-weight:700;
-}
+.form{display:grid; gap:10px}
+label{display:grid; gap:6px; color:rgba(232,238,252,.9); font-weight:700}
 
 input, textarea{
   border:1px solid rgba(255,255,255,.14);
@@ -351,16 +287,9 @@ input, textarea{
   border-radius:14px;
   outline:none;
 }
+input:focus, textarea:focus{border-color: rgba(25,211,255,.55)}
 
-input:focus, textarea:focus{
-  border-color: rgba(25,211,255,.55);
-}
-
-.hint{
-  margin:0;
-  color:rgba(232,238,252,.65);
-  font-size:.9rem;
-}
+.hint{margin:0; color:rgba(232,238,252,.65); font-size:.9rem}
 
 .footer{
   margin-top:22px;
@@ -384,7 +313,6 @@ input:focus, textarea:focus{
   transition: .25s ease;
   backdrop-filter: blur(10px);
 }
-
 .toast.show{
   opacity:1;
   transform: translateY(0);

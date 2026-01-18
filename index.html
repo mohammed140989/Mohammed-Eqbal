@@ -1,11 +1,10 @@
-cat > index.html <<'EOF'
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohammed Eqbal | Portfolio</title>
-  <meta name="description" content="صفحة شخصية بسيطة وحديثة - منشورة عبر Docker + Nginx." />
+  <title>Portfolio Template</title>
+  <meta name="description" content="واجهة عامة (Template) قابلة للتعديل - Docker + Nginx" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -13,33 +12,32 @@ cat > index.html <<'EOF'
 
   <header class="nav">
     <div class="brand">
-      <span class="logo" aria-hidden="true">ME</span>
-      <span class="brand-text">Mohammed Eqbal</span>
+      <span class="logo">PF</span>
+      <span class="brand-text">Portfolio Template</span>
     </div>
 
-    <nav class="links" aria-label="التنقل">
+    <nav class="links" id="links">
       <a href="#about">نبذة</a>
       <a href="#skills">المهارات</a>
       <a href="#projects">المشاريع</a>
-      <a href="#contact" class="btn btn-sm">تواصل</a>
+      <a class="btn btn-sm" href="#contact">تواصل</a>
     </nav>
 
-    <button class="menu" id="menuBtn" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+    <button class="menu" id="menuBtn" aria-label="Menu">☰</button>
   </header>
 
   <main class="container">
     <section class="hero">
       <div class="hero-card">
         <p class="badge">✅ Docker + Nginx</p>
-        <h1>واجهة نظيفة وحديثة<br><span class="grad">لتسليم تكليف Docker</span></h1>
+        <h1>واجهة عامة وحديثة<br><span class="grad">قابلة للتعديل</span></h1>
         <p class="sub">
-          هذا الموقع يعمل داخل Container ويتم عرضه عبر Nginx.
-          مناسب كصفحة تعريف/بورتفوليو بسيطة.
+          قالب عام لصفحة تعريف/بورتفوليو، مناسب للتسليم في Docker أو نشره على GitHub Pages.
         </p>
 
         <div class="actions">
           <a class="btn" href="#projects">شاهد المشاريع</a>
-          <button class="btn btn-ghost" id="toastBtn">اختبار</button>
+          <button class="btn btn-ghost" id="toastBtn" type="button">تجربة زر</button>
         </div>
 
         <div class="stats">
@@ -58,7 +56,7 @@ cat > index.html <<'EOF'
             </div>
           </div>
           <div class="stat">
-            <span class="k">🔒</span>
+            <span class="k">✅</span>
             <div>
               <p class="n">منظم</p>
               <p class="d">ملفات واضحة</p>
@@ -71,13 +69,13 @@ cat > index.html <<'EOF'
         <div class="card" id="about">
           <h2>نبذة</h2>
           <p>
-            أنا <b>Mohammed Eqbal</b>. هذه صفحة واجهة حديثة كمثال،
-            ويمكنك تعديل الاسم/الوصف/المشاريع بسهولة.
+            ضع هنا تعريف بسيط عنك أو عن مشروعك. هذا النص عام ويمكن تغييره بسهولة.
           </p>
+
           <ul class="meta">
             <li><span>المستودع</span><a href="#" id="repoLink">GitHub</a></li>
             <li><span>التشغيل</span><code>docker run -p 8080:80</code></li>
-            <li><span>التاريخ</span><span id="today"></span></li>
+            <li><span>التاريخ</span><span id="today">—</span></li>
           </ul>
         </div>
 
@@ -94,34 +92,34 @@ cat > index.html <<'EOF'
       </aside>
     </section>
 
-    <section class="grid" id="projects" aria-label="المشاريع">
+    <section class="grid" id="projects">
       <h2 class="section-title">مشاريع مختارة</h2>
 
       <div class="cards">
         <article class="pcard">
-          <h3>موقع ثابت</h3>
-          <p>صفحة HTML/CSS/JS تعمل بسرعة على Nginx.</p>
+          <h3>مشروع 1</h3>
+          <p>وصف بسيط للمشروع الأول.</p>
           <div class="row">
-            <span class="tag">Static</span>
-            <span class="tag">Nginx</span>
+            <span class="tag">واجهة</span>
+            <span class="tag">HTML</span>
           </div>
         </article>
 
         <article class="pcard">
-          <h3>Docker جاهز</h3>
-          <p>Dockerfile بسيط لتحويل المشروع إلى Image وتشغيله.</p>
+          <h3>مشروع 2</h3>
+          <p>وصف بسيط للمشروع الثاني.</p>
           <div class="row">
             <span class="tag">Docker</span>
-            <span class="tag">Build/Run</span>
+            <span class="tag">Deploy</span>
           </div>
         </article>
 
         <article class="pcard">
-          <h3>نشر أونلاين</h3>
-          <p>يمكن تشغيله في Codespaces / Play with Docker بدون تثبيت محلي.</p>
+          <h3>مشروع 3</h3>
+          <p>وصف بسيط للمشروع الثالث.</p>
           <div class="row">
-            <span class="tag">Codespaces</span>
-            <span class="tag">Ports</span>
+            <span class="tag">UI</span>
+            <span class="tag">CSS</span>
           </div>
         </article>
       </div>
@@ -130,33 +128,32 @@ cat > index.html <<'EOF'
     <section class="contact" id="contact">
       <div class="card">
         <h2>تواصل</h2>
-        <p>ضع بريدك أو روابطك هنا.</p>
+        <p>نموذج واجهة فقط (لا يرسل بيانات حقيقية).</p>
 
-        <form class="form" onsubmit="return false;">
+        <form class="form" id="contactForm">
           <label>
             الاسم
             <input id="name" placeholder="اكتب اسمك" />
           </label>
+
           <label>
             الرسالة
             <textarea id="message" rows="4" placeholder="اكتب رسالة قصيرة"></textarea>
           </label>
-          <button class="btn" id="sendBtn">إرسال (تجريبي)</button>
-          <p class="hint">لن يتم إرسال شيء فعليًا — هذا نموذج واجهة فقط.</p>
+
+          <button class="btn" id="sendBtn" type="submit">إرسال (تجريبي)</button>
+          <p class="hint">يمكنك ربطه Backend لاحقًا إذا أردت.</p>
         </form>
       </div>
     </section>
 
     <footer class="footer">
-      <p>© <span id="year"></span> Mohammed Eqbal — Built with Docker.</p>
+      <p>© <span id="year">—</span> Portfolio Template — Built with Docker.</p>
     </footer>
   </main>
 
-  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true">
-    ✅ اشتغل كل شيء!
-  </div>
+  <div class="toast" id="toast">✅ تم</div>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
-EOF

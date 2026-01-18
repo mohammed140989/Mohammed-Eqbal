@@ -1,32 +1,61 @@
-cat > script.js <<'EOF'
-const yearEl = document.getElementById('year');
-const todayEl = document.getElementById('today');
-const repoLink = document.getElementById('repoLink');
+(() => {
+  const $ = (id) => document.getElementById(id);
 
-yearEl.textContent = new Date().getFullYear();
-todayEl.textContent = new Date().toLocaleDateString('ar');
+  function showToast(msg) {
+    const toast = $("toast");
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(() => toast.classList.remove("show"), 1700);
+  }
 
-repoLink.href = window.location.href.replace(/\/$/, '');
+  function safeSetText(id, text) {
+    const el = $(id);
+    if (el) el.textContent = text;
+  }
 
-const toast = document.getElementById('toast');
-const toastBtn = document.getElementById('toastBtn');
-const sendBtn = document.getElementById('sendBtn');
+  function init() {
+    // Year + Today
+    safeSetText("year", new Date().getFullYear());
+    safeSetText("today", new Date().toLocaleDateString("ar"));
 
-function showToast(msg){
-  toast.textContent = msg;
-  toast.classList.add('show');
-  clearTimeout(showToast._t);
-  showToast._t = setTimeout(() => toast.classList.remove('show'), 1800);
-}
+    // Repo link (اختياري: ضع رابطك هنا)
+    const repoLink = $("repoLink");
+    if (repoLink) {
+      // ضع رابط المستودع الحقيقي إن أردت:
+      // repoLink.href = "https://github.com/USERNAME/REPO";
+      repoLink.href = "#";
+    }
 
-toastBtn.addEventListener('click', () => showToast('✅ اشتغل كل شيء!'));
-sendBtn.addEventListener('click', () => showToast('📨 تم (تجريبيًا)'));
+    // Toast button
+    const toastBtn = $("toastBtn");
+    if (toastBtn) {
+      toastBtn.addEventListener("click", () => showToast("✅ كل شيء يعمل بشكل ممتاز"));
+    }
 
-const menuBtn = document.getElementById('menuBtn');
-const links = document.querySelector('.links');
+    // Contact form (تجريبي)
+    const form = $("contactForm");
+    if (form) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        showToast("✅ تم (تجريبي) — لا يتم إرسال بيانات");
+      });
+    }
 
-menuBtn.addEventListener('click', () => {
-  const opened = links.classList.toggle('open');
-  menuBtn.setAttribute('aria-expanded', opened ? 'true' : 'false');
-});
-EOF
+    // Mobile menu
+    const menuBtn = $("menuBtn");
+    const links = $("links");
+    if (menuBtn && links) {
+      menuBtn.addEventListener("click", () => {
+        links.classList.toggle("open");
+      });
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
